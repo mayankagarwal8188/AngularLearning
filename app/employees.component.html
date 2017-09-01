@@ -1,0 +1,24 @@
+<div>
+  <h2>Employee List</h2>
+  <ul class="employees">
+    <li *ngFor="#employee of employees"
+      [class.selected]="employee === selectedEmployee"
+      (click)="onSelect(employee)">
+      <span class="badge">{{employee.id}}</span> {{employee.firstName}} {{employee.lastName}}
+    </li>
+  </ul>
+  <div *ngIf="selectedEmployee">
+    <h2>Click view details to get more details of {{selectedEmployee.firstName | uppercase}}</h2>
+    <button (click)="loadMyChildComponent(selectedEmployee)">View Details</button>
+  </div>
+  <div *ngIf= 'selectedEmployee1'>
+  <my-employee-detail [employee]="selectedEmployee1">hihihi</my-employee-detail>
+</div>
+</div>
+
+
+<!-- 
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

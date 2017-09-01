@@ -1,0 +1,26 @@
+<div *ngIf="employee">
+	<h2>{{employee.name}} Details : </h2>
+	<div>
+		<label>Emp ID: </label>{{employee.id}}
+		</div>
+	  <div>
+		<label>Name: </label> {{employee.firstName}} {{employee.lastName}}
+		</div>
+		<div>
+		<label>Address: </label>
+		<input [(ngModel)]="employee.address" placeholder="address"/>
+		</div>
+		<label>City: </label>
+		<input [(ngModel)]="employee.city" placeholder="city"/>
+		<div>
+		<label>Salary (LPA): </label>{{employee.salary}}</div>
+	  <div>
+		<label>Join Date: </label>{{employee.joinDate}}</div>
+	<button (click)="goBack()">Back</button>
+</div>
+
+<!-- 
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
