@@ -11,8 +11,10 @@
     <h2>Click view details to get more details of {{selectedEmployee.firstName | uppercase}}</h2>
     <button (click)="loadMyChildComponent(selectedEmployee)">View Details</button>
   </div>
+  <div *ngIf= 'loadComponent'>
   <div *ngIf= 'selectedEmployee1'>
   <my-employee-detail [employee]="selectedEmployee1">hihihi</my-employee-detail>
+</div>
 </div>
 </div>
 

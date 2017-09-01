@@ -17,6 +17,7 @@ export class EmployeesComponent implements OnInit {
   private loadComponent = false;
     loadMyChildComponent(employee1: Employee){
        this.selectedEmployee1 = employee1;
+       this.loadComponent = true;
     }
 
   constructor(private _employeeService: EmployeeService, private _router: Router) { }
@@ -33,7 +34,11 @@ export class EmployeesComponent implements OnInit {
     this.getEmployees();
   }
 
-  onSelect(employee: Employee) { this.selectedEmployee = employee; }
+  onSelect(employee: Employee) { 
+    this.selectedEmployee = employee;
+  this.loadComponent = false;
+    
+  }
 }
 
 
